@@ -179,19 +179,22 @@ function init_gear_sets()
 	sets.midcast.Stoneskin = {neck="Nodens Gorget",ear2="Earthcry Earring",waist="Siegel Sash",legs="Shedir Seraweels"}
 	sets.midcast.Protect = {ring2="Sheltered Ring"}
 	sets.midcast.Shell = {ring2="Sheltered Ring"}
-	
+
+	--Potency Set for Paralyze/Slow and other spells that rely on dMND
 	sets.midcast['Enfeebling Magic'] = {main="Daybreak",sub="Ammurapi Shield",range=empty,ammo="Regal Gem",
 		head="Viti. Chapeau +3",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Snotra Earring",
 		body="Lethargy Sayon +1",hands="Regal Cuffs",ring1="Kishar Ring",ring2="Stikini Ring +1",
 		back=gear.nuke_jse_back,waist="Obstin. Sash",legs="Chironic Hose",feet="Vitiation Boots +3"}
-		
+
+	--Max Magic Accuracy
 	sets.midcast['Enfeebling Magic'].Resistant = {main="Daybreak",sub="Ammurapi Shield",range=empty,ammo="Regal Gem",
 		head="Viti. Chapeau +3",neck="Dls. Torque +2",ear1="Regal Earring",ear2="Snotra Earring",
 		body="Atrophy Tabard +3",hands=gear.chironic_enfeeble_hands,ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
 		back=gear.nuke_jse_back,waist="Luminary Sash",legs="Chironic Hose",feet="Vitiation Boots +3"}
-		
+
+	--Duration Set for Silence, Petrify, Bind, etc.
 	sets.midcast.DurationOnlyEnfeebling = set_combine(sets.midcast['Enfeebling Magic'], {main="Bunzi's Rod",body="Atrophy Tabard +3",range="Kaja Bow"})
-		
+
 	sets.midcast.Silence = sets.midcast.DurationOnlyEnfeebling
 	sets.midcast.Silence.Resistant = sets.midcast['Enfeebling Magic'].Resistant
 	sets.midcast.Sleep = set_combine(sets.midcast.DurationOnlyEnfeebling,{waist="Acuity Belt +1"})
@@ -200,24 +203,34 @@ function init_gear_sets()
 	sets.midcast.Bind.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant,{waist="Acuity Belt +1"})
 	sets.midcast.Break = set_combine(sets.midcast.DurationOnlyEnfeebling,{waist="Acuity Belt +1"})
 	sets.midcast.Break.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant,{waist="Acuity Belt +1"})
+
+	--Gravity potency is static aside from Saboteur or +Effect, no other scaling
+	sets.midcast.Gravity = sets.midcast.DurationOnlyEnfeebling
+	sets.midcast.Gravity.Resistant = sets.midcast['Enfeebling Magic'].Resistant
 	
 	sets.midcast.Dispel = sets.midcast['Enfeebling Magic'].Resistant
-	
+	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {main="Daybreak",sub="Ammurapi Shield"})
+
+	--Skill Based sets for Frazzle, Distract, Poison
 	sets.midcast.SkillBasedEnfeebling = set_combine(sets.midcast['Enfeebling Magic'], {ear1="Vor Earring",hands="Leth. Gantherots +1",ring1="Stikini Ring +1",legs="Psycloth Lappas"})
-	
+
+	sets.midcast.Frazzle = sets.midcast.SkillBasedEnfeebling
+	sets.midcast.Frazzle.Resistant = sets.midcast['Enfeebling Magic'].Resistant
+	--Frazzle II is used on resistant NMs to help Frazzle III land with full effect
 	sets.midcast['Frazzle II'] = sets.midcast['Enfeebling Magic'].Resistant
-	sets.midcast['Frazzle III'] = sets.midcast.SkillBasedEnfeebling
-	sets.midcast['Frazzle III'].Resistant = sets.midcast['Enfeebling Magic'].Resistant
 	
-	sets.midcast['Distract III'] = sets.midcast.SkillBasedEnfeebling
-	sets.midcast['Distract III'].Resistant = sets.midcast['Enfeebling Magic'].Resistant
-	
-	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
+	sets.midcast.Distract = sets.midcast.SkillBasedEnfeebling
+	sets.midcast.Distract.Resistant = sets.midcast['Enfeebling Magic'].Resistant
+
+	sets.midcast.Poison = sets.midcast.SkillBasedEnfeebling
+	sets.midcast.Poison.Resistant = sets.midcast['Enfeebling Magic'].Resistant
 
 	sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 	sets.midcast.Diaga = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
 		
 	sets.midcast.Bio = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
+
+    sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
 
     sets.midcast['Elemental Magic'] = {main="Bunzi's Rod",sub="Ammurapi Shield",range=empty,ammo="Ghastly Tathlum +1",
         head="Bunzi's Hat",neck="Baetyl Pendant",ear1="Crematio Earring",ear2="Friomisi Earring",
