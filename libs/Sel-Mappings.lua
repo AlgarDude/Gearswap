@@ -229,7 +229,7 @@ spell_maps = {
 	['Gain-AGI']='BoostStat',['Gain-CHR']='BoostStat',['Gain-DEX']='BoostStat',['Gain-INT']='BoostStat',['Gain-MND']='BoostStat',['Gain-STR']='BoostStat',['Gain-VIT']='BoostStat',
     ['Raise']='Raise',['Raise II']='Raise',['Raise III']='Raise',['Arise']='Raise',
     ['Reraise']='Reraise',['Reraise II']='Reraise',['Reraise III']='Reraise',['Reraise IV']='Reraise',
-	['Dia']='Dia',['Dia II']='Dia',['Dia III']='Dia',['Diaga']='Dia',['Diaga II']='Dia',
+	['Dia']='Dia',['Dia II']='Dia',['Dia III']='Dia',['Diaga']='Dia',
 	['Bio']='Bio',['Bio II']='Bio',['Bio III']='Bio',['Dispel']='Dispel',['Dispelga']='Dispel',
     ['Protect']='Protect',['Protect II']='Protect',['Protect III']='Protect',['Protect IV']='Protect',['Protect V']='Protect',
     ['Shell']='Shell',['Shell II']='Shell',['Shell III']='Shell',['Shell IV']='Shell',['Shell V']='Shell',
@@ -280,7 +280,13 @@ spell_maps = {
 	['Firestorm II']='Storm',['Hailstorm II']='Storm',['Windstorm II']='Storm',['Sandstorm II']='Storm',['Thunderstorm II']='Storm',['Rainstorm II']='Storm',['Aurorastorm II']='Storm',['Voidstorm II']='Storm',
     ['Fire Maneuver']='Maneuver',['Ice Maneuver']='Maneuver',['Wind Maneuver']='Maneuver',['Earth Maneuver']='Maneuver',['Thunder Maneuver']='Maneuver',
     ['Water Maneuver']='Maneuver',['Light Maneuver']='Maneuver',['Dark Maneuver']='Maneuver',
-	['Haste']='Haste',['Haste II']='Haste',
+    ['Haste']='Haste',['Haste II']='Haste',['Flurry']='Flurry',['Flurry II']='Flurry',
+    ['Sleep']='Sleep',['Sleep II']='Sleep',['Sleepga']='Sleep',['Sleepga II']='Sleep',
+    ['Gravity']='Gravity',['Gravity II']='Gravity',
+    ['Distract']='Distract',['Distract II']='Distract',['Distract III']='Distract',
+    ['Frazzle']='Frazzle',['Frazzle II']='Frazzle',['Frazzle III']='Frazzle',
+    ['Paralyze']='Paralyze',['Paralyze II']='Paralyze',
+    ['Poison']='Poison',['Poison II']='Poison',['Poisonga']='Poison',['Poisonga II']='Poison',
 }
 
 data.spells.no_skill = S{'Reraise','Reraise II','Reraise III','Reraise IV','Raise','Raise II','Raise III','Reraise','Arise',
