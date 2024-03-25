@@ -363,17 +363,9 @@ function job_get_spell_map(spell, default_spell_map)
                 return 'LightWeatherCure'
 		elseif world.day_element == 'Light' then
                 return 'LightDayCure'
-        end
+        	end
 	end	
-	
-	if spell.skill == 'Enfeebling Magic' then
-		if spell.english:startswith('Dia') then
-			return "Dia"
-		elseif spell.type == "WhiteMagic" or spell.english:startswith('Frazzle') or spell.english:startswith('Distract') then
-			return 'MndEnfeebles'
-        else
-            return 'IntEnfeebles'
-        end
+
     end
 	
 	if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' then
