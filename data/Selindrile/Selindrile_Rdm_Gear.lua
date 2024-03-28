@@ -192,6 +192,10 @@ function init_gear_sets()
 		body="Atrophy Tabard +3",hands=gear.chironic_enfeeble_hands,ring1="Metamor. Ring +1",ring2="Stikini Ring +1",
 		back=gear.nuke_jse_back,waist="Luminary Sash",legs="Chironic Hose",feet="Vitiation Boots +3"}
 
+	--Blind uses a similar set to Paralyze or Slow but prioritizes player INT vs enemy MND
+	sets.midcast.Blind = set_combine(sets.midcast['Enfeebling Magic'],{waist="Acuity Belt +1"})
+	sets.midcast.Blind.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant,{waist="Acuity Belt +1"})
+	
 	--Duration Set for Silence, Petrify, Bind, etc.
 	sets.midcast.DurationOnlyEnfeebling = set_combine(sets.midcast['Enfeebling Magic'], {main="Bunzi's Rod",body="Atrophy Tabard +3",range="Kaja Bow"})
 
@@ -207,7 +211,8 @@ function init_gear_sets()
 	--Gravity potency is static aside from Saboteur or +Effect, no other scaling
 	sets.midcast.Gravity = sets.midcast.DurationOnlyEnfeebling
 	sets.midcast.Gravity.Resistant = sets.midcast['Enfeebling Magic'].Resistant
-	
+
+	--Max Magic Accuracy. Choose INT over MND where possible as a secondary consideration.
 	sets.midcast.Dispel = sets.midcast['Enfeebling Magic'].Resistant
 	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {main="Daybreak",sub="Ammurapi Shield"})
 
